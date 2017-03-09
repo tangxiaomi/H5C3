@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    document.onclick = function () {
+    //        console.log("hehe");
+    //    }
+    //
+    //    document.onclick = null;
+
+
+    //addEventListener：添加事件监听
+    function fn () {
+        console.log("hello");
+    }
+    function fn1 () {
+        console.log("world");
+    }
+    document.addEventListener("click", fn, false);
+    document.addEventListener("click", fn1, false);
+
+    //移除事件监听
+    //removeEventListener
+    //移除事件的时候，这个function必须是注册的时候的那个function
+    //想要将来的事件能移除，注册的时候不能用匿名函数了
+    document.removeEventListener("click", fn1, false);
+
+
+</script>
+</body>
+</html>

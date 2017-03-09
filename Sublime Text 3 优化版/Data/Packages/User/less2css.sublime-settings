@@ -1,0 +1,26 @@
+/*
+ * Less2Css default settings
+ *
+ * ******** IMPORTANT ********
+ *
+ * DO NOT modify this file,
+ * Copy the content to user settings
+ * via "Preferences" -> "Package Settings" -> "Less2Css" -> "Settings - User".
+ *
+ */
+
+{
+  "autoCompile": false,
+  "createCssSourceMaps": false,
+  "ignorePrefixedFiles": false,
+  "lessBaseDir": "./",
+  "lesscCommand": false,
+  "main_file": false,
+  "minify": false,
+  "minName": false,
+  "outputDir": "./",
+  "outputFile": "", //[example.css] if left blank uses same name of .less file
+  "showErrorWithWindow": true,
+  "autoprefix": false,
+  "disableVerbose":false
+}

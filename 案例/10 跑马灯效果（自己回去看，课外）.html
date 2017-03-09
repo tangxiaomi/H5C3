@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box_wrap{
+            width: 1000px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        .box{
+            height: 400px;
+            margin: 0px auto;
+            position: relative;
+            perspective: 10000px;
+            transform: rotateX(-20deg) rotateY(0deg);
+            transform-style: preserve-3d;
+        }
+        .info{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            background:  url(images/0.png) 0 0 no-repeat;
+            -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
+        }
+        .info:nth-child(2){
+            background-image: url(images/1.png);
+        }
+        .info:nth-child(3){
+            background-image: url(images/2.png);
+        }
+        .info:nth-child(4){
+            background-image: url(images/3.png);
+        }
+        .info:nth-child(5){
+            background-image: url(images/4.png);
+        }
+        .info:nth-child(6){
+            background-image: url(images/5.png);
+        }
+        .info:nth-child(7){
+            background-image: url(images/6.png);
+        }
+        .info:nth-child(8){
+            background-image: url(images/7.png);
+        }
+    </style>
+    <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+
+        var len = $('.info').length;
+
+        $('.info').each(function(index, el) {
+            $(el).css('transform',' translate(-50%,-50%) rotateY('+index*(360/len)+'deg) translateZ(240px)');
+        });
+
+        var startX,startY,rotateX = -20, centerX = 0,centerY = 0,rotateY = 0;
+
+        $('.box_wrap').mousedown(function(event) {
+            event.preventDefault();
+            startX = event.pageX;
+            startY = event.pageY;
+            $(document).mousemove(function(event) {
+                var moveX = event.pageX;
+                var moveY = event.pageY;
+                var x = moveX - startX;
+                var y = moveY - startY;
+                rotateX = (centerX + x); 
+                rotateY = (centerY + y); 
+
+                $('.box').css('transform','rotateX('+ rotateY/10+'deg) rotateY('+rotateX/3+'deg)');
+            });
+
+            $(document).mouseup(function(event) {
+                
+                centerX = rotateX;
+                centerY = rotateY;
+                $(document).off('mouseup');
+                $(document).off('mousemove');
+
+            });
+        });
+
+    })
+    </script>
+</head>
+<body>
+    <div class="box_wrap">
+        <div class="box animation">
+            <div class="info"></div>
+            <div class="info"></div>
+            <div class="info"></div>
+            <div class="info"></div>
+            <div class="info"></div>
+            <div class="info"></div>
+            <div class="info"></div>
+            <div class="info"></div>
+        </div>
+    </div>
+</body>
+</html>

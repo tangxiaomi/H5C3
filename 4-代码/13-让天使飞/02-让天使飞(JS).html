@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #ts  {
+            position: absolute;
+        }
+        body {
+            height: 4000px;
+        }
+    </style>
+</head>
+<body>
+<img src="images/tianshi.gif" id="ts" alt="">
+
+<script>
+
+    var ts = document.getElementById("ts");
+    //鼠标移动事件 : onmousemove
+    window.onmousemove = function (event) {
+        //console.log(event);
+
+        //1、 获取鼠标的位置：clientX
+        var x = event.pageX;
+        var y = event.pageY;
+        console.log(x+"----"+y);
+
+        //2、改变小天使的left，top
+        ts.style.left = x + "px";
+        ts.style.top = y + "px";
+
+    }
+
+
+</script>
+</body>
+</html>

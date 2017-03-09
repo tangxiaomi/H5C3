@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        div {
+            width: 1200px;
+            height: 400px;
+            border: 2px solid red;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        div li {
+            width: 1200px;
+            height: 400px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+
+<script src="animate.js"></script>
+<script>
+    //1. 找对象
+    var box = document.getElementById("box");
+    var ul = box.children[0];
+    var lis = ul.children;
+
+    //2. 给所有的li添加背景图片
+    for (var i = 0; i < lis.length; i++) {
+        var li = lis[i];
+        li.style.backgroundImage = "url(images/" + (i + 1) + ".jpg)";
+
+        //3. 给每一个li设置一个left值
+        li.style.left = 240 * i + "px";
+
+        li.index = i;
+
+        //4. 鼠标移动上来，给每一个li设置left值
+        li.onmouseover = function () {
+
+            var idx = this.index;
+            for (var i = 0; i < lis.length; i++) {
+                if (i <= idx) {
+                    //下标小于或者等于当前li的下标的时候。left：100*i
+                    animate(lis[i], {"left": 100 * i});
+                } else {
+                    //下标大于当前li的时候，left：100*i + 700
+                    animate(lis[i], {"left": 100 * i + 700})
+                }
+            }
+
+
+        }
+
+        //4. 鼠标离开的时候，给每一个li恢复left
+        li.onmouseout = function () {
+            for (var i = 0; i < lis.length; i++) {
+                animate(lis[i], {"left": 240 * i});
+            }
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

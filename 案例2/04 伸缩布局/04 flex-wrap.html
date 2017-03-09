@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		ul{
+			width: 80%;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			display: flex;
+			/*  flex-wrap  项目是否换行 阻止项目自动收拾  
+				经验之谈：不推荐大家做换行处理  
+				nowrap 默认值 不换行
+				wrap 换行
+				wrap-reverse 换行 第一行在最下面
+			*/
+			flex-wrap: wrap-reverse;
+			
+		}
+		li{
+			width: 100px;
+			height: 100px;
+			background-color: green;	
+			color: #fff;
+			flex-shrink: 0;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+		<li>11</li>
+		<li>12</li>
+	</ul>
+</body>
+</html>

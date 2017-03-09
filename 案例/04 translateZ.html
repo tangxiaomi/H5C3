@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			perspective: 500px;
+		}
+		.box{
+			width: 220px;
+			height: 148px;
+			background: url(daziran.jpg) no-repeat;
+			margin: 100px auto;
+			transition: all 1s;
+		}
+		.current{
+			transform:translateZ(400px)rotateY(180deg)   ;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<button>点我呀</button>
+</body>
+<script type="text/javascript">
+	var btn = document.querySelector('button');
+	var box = document.querySelector('.box');
+
+	btn.addEventListener('click', function (argument) {
+		box.classList.add('current');
+	})
+
+</script>
+</html>

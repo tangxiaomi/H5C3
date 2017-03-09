@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		ul{
+			width: 80%;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			display: flex;
+			/* 
+				align-content 控制多行元素在侧轴上的对齐方式 如果只有一行 该属性没用
+				
+				flex-start 将所有的行以起点对齐
+				flex-end  将所有的行以终点对齐
+				center 居中对齐
+				stretch 默认值 默认项目的高度占满整行 有高度的情况下会被覆盖
+				space-between 两端对齐 
+				space-around 每一行两侧的间隔都相等 
+				
+			*/
+			flex-wrap: wrap;
+			align-content: space-around;
+		}
+		li{
+			width: 100px;
+			height: 100px;
+			background-color: green;	
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+		<li>11</li>
+		<li>12</li>
+		<li>13</li>
+	</ul>
+</body>
+</html>

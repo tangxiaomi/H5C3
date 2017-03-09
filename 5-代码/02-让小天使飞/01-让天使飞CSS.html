@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #ts {
+            position: absolute;
+        }
+
+        body {
+            height: 4000px;
+        }
+    </style>
+</head>
+<body>
+<img src="images/tianshi.gif" id="ts" alt="">
+
+
+<script src="../common.js"></script>
+<script>
+
+
+    var ts = document.getElementById("ts");
+    //给document注册一个onmousemove事件
+    document.onmousemove = function (event) {
+        event = event || window.event;
+
+        //console.log(event);
+        ts.style.left = getPageX(event) + "px";
+        ts.style.top = getPageY(event) + "px";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>3</title>
+	<style type="text/css" media="screen">
+		ul{
+			height:120px;
+			margin:50px;
+			text-align:center;
+			list-style:none;
+		}
+		li{
+			width:500px;
+			height:100px;
+			position:relative;
+			transition:all 1s;
+			transform-style:preserve-3d;
+		}
+		li span{
+			height:100%;
+			width:100%;
+			line-height:100px;
+			position:absolute;
+			top:0;
+			left:0;
+		}
+		li span:nth-child(1){
+			transform:translateZ(50px);
+			background: green;
+		}
+		li span:nth-child(2){
+			background-color:yellow;
+			transform:rotateX(-90deg) translateZ(50px);
+		}
+
+		li:hover{
+			transform:rotateX(90deg);
+		}
+
+	</style>
+</head>
+<body>
+	
+		<ul>
+			<li>
+				<span>1</span>
+				<span>2</span>
+			</li>
+		</ul>
+	
+</body>
+</html>

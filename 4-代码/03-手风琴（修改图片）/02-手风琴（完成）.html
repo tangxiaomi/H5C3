@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 1200px;
+            height: 270px;
+            border: 2px solid red;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        div ul {
+            list-style: none;
+
+        }
+
+        div ul li {
+            position: absolute;
+            width: 1200px;
+            height: 270px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+
+<script src="animate.js"></script>
+<script>
+    //0. 找对象
+    var box = document.getElementById("box");
+    var ul = box.children[0];
+    var lis = ul.children;
+
+    //1. 首先给li设置背景图片
+    for (var i = 0; i < lis.length; i++) {
+        var li = lis[i];
+        li.index = i;
+        li.style.backgroundImage = "url(images/" + (i + 1) + ".jpg)";
+
+        li.style.left = 240 * i + "px";
+
+
+        //3. 给每一个li注册鼠标经过事件
+        li.onmouseover = function () {
+            for (var j = 0; j < lis.length; j++) {
+                //对于小于等于当前索引的li，left值改为100*j px
+                var idx = this.index;
+                if (j <= idx) {
+                    animate(lis[j], {"left": 100 * j});
+                } else {
+                    animate(lis[j], {"left": 100 * j + 700});
+                }
+
+            }
+        };
+
+        //4. 给每一个li注册鼠标离开事件
+        li.onmouseout = function () {
+            for (var j = 0; j < lis.length; j++) {
+                animate(lis[j], {"left": 240*j});
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

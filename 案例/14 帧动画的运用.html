@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 80px;
+			height: 80px;
+			background:  url(tv_animate.png) 0 0 no-repeat;
+			margin: 100px auto;
+			animation: zou 1s steps(15) infinite alternate;
+		}
+		@keyframes zou{
+			0%{
+				background-position: 0 0;
+			}
+			100%{
+				background-position: -1200px 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

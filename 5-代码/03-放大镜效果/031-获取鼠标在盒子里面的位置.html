@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 400px;
+            background-color: hotpink;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+
+<script src="../common.js"></script>
+<script>
+    var box = document.getElementById("box");
+    box.onclick = function (event) {
+        event = event || window.event;
+        //需求：当点击的时候，获取在盒子里面的位置
+        var pageX = getPageX(event);
+        var pageY = getPageY(event);
+
+        var spaceX = pageX - this.offsetLeft;
+        var spaceY = pageY - this.offsetTop;
+
+        console.log(spaceX + "   " + spaceY);
+    }
+</script>
+</body>
+</html>

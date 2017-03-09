@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		img{
+			display: block;
+		}
+		.box{
+			width: 560px;
+			height: 380px;
+			border: 1px solid #000;
+			margin: 100px auto 0;
+			display: flex;
+		}
+		ul{
+			flex: 1;
+			height: 380px;
+			position: relative;
+			transform-style: preserve-3d;
+			/* transition: all 1s; */
+		}
+		li{
+			/*这里的宽度一定是设置成百分比，完全继承父级的宽度 不要写死 要不然就切除不掉*/
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			overflow-x: hidden;
+		}
+		li:nth-child(1){
+			transform: rotateX(90deg) translateZ(190px);
+		}
+		li:nth-child(2){
+			transform: rotateX(-90deg) translateZ(190px);
+		}
+		li:nth-child(3){
+			transform: translateZ(190px);
+		}
+		li:nth-child(4){
+			transform: rotateX(-180deg) translateZ(190px);
+		}
+		.btn_wrap{
+			width: 560px;
+			height: 1px;
+			margin: 0 auto;
+			position: relative;
+			top: -250px;
+		}
+		.btn_wrap a{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			line-height: 100px;
+			text-align: center;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+		}
+		.btn_wrap a:nth-child(1){
+			left: -100px;
+		}
+		.btn_wrap a:nth-child(2){
+			right: -100px;
+		}
+		ul:nth-child(2) img{
+			margin-left: -140px;
+		}
+		ul:nth-child(3) img{
+			margin-left: -280px;
+		}
+		ul:nth-child(4) img{
+			margin-left: -420px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li><img src="imgs/01.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/02.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/03.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/04.jpg" height="380" width="560" alt=""></li>
+		</ul>
+		<ul>
+			<li><img src="imgs/01.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/02.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/03.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/04.jpg" height="380" width="560" alt=""></li>
+		</ul>
+		<ul>
+			<li><img src="imgs/01.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/02.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/03.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/04.jpg" height="380" width="560" alt=""></li>
+		</ul>
+		<ul>
+			<li><img src="imgs/01.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/02.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/03.jpg" height="380" width="560" alt=""></li>
+			<li><img src="imgs/04.jpg" height="380" width="560" alt=""></li>
+		</ul>
+	</div>
+	<div class="btn_wrap">
+		<a class="left" href="javascript:;">点我点我</a>
+		<a class="right" href="javascript:;">点我点我</a>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 这个是一个增量
+		var num = 0;
+		var flag = true;
+		
+		$('.right').click(function(event) {
+			if(flag){
+				// 过河直接拆桥
+				flag = false;
+				// 每点击一次就累加90度 （就是让元素发生翻转）
+				num += 90;
+				//$('ul').css('transform','rotateX('+ num +'deg)');
+
+				$('ul').each(function(index, el) {
+					$(el).css({
+						'transform':'rotateX('+ num +'deg)',
+						'transition': 'all 1s '+index * 200+'ms'
+					})
+				});
+			}
+
+		});
+
+		//为了防止用户暴力单击带来的BUG 所以需要当整个过渡执行完毕之后才去让flag为true以遍下次点击
+		$('ul').last().on('transitionend',function (argument) {
+			// 重新把桥接起来
+			flag = true;
+		})
+
+
+		$('.left').click(function(event) {
+			// 每点击一次就累减90度 （就是让元素发生翻转）
+			num -= 90;
+			$('ul').css('transform','rotateX('+ num +'deg)');
+
+		});
+
+	});
+</script>
+</html>

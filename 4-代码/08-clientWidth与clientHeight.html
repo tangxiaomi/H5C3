@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 10px solid black;/*只有offsetHeight包含*/
+            marign:10px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+    天王盖地虎，宝塔镇河妖<br>
+</div>
+
+
+<script>
+    var box = document.getElementById("box");
+    console.log(box.offsetHeight);//200   盒子自身的高度：height+padding+border
+    console.log(box.scrollHeight);//200   盒子内容的高度：height+paddding (内容的真实高度高度)
+    console.log(box.clientHeight);//200   盒子可视区域的高度：height + padding
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+//    //不能使用匿名函数
+//    function fn () {
+//        console.log("呵呵");
+//    }
+//    function fn1 () {
+//        console.log("哈哈");
+//    }
+//    document.attachEvent("onclick", fn);
+//    document.attachEvent("onclick", fn1);
+//
+//    //document.onclick = null;
+//    document.detachEvent("onclick", fn);
+
+
+
+    function addEvent(obj, type, fn) {
+        if(obj.addEventListener) {
+            obj.addEventListener(type, fn, false);
+        }else if(obj.attachEvent){
+            obj.attachEvent("on"+type,fn);
+        }else {
+            //只能用on的方式,如果都不支持，用就用on的方式
+            obj["on"+type] = fn;
+        }
+    }
+    function removeEvent(obj, type, fn) {
+        if(obj.removeEventListener) {
+            obj.removeEventListener(type, fn, false);
+        }else if(obj.detachEvent){
+            obj.detachEvent("on"+type, fn);
+        }else {
+            obj["on"+type] = null;
+        }
+    }
+
+
+    //封装：说白了，封装一次，以后就嗨皮了
+
+    function fn() {
+        console.log("hehe");
+    }
+    function fn1 (){
+        console.log("xixi");
+    }
+    addEvent(document, "click", fn);
+    addEvent(document, "click", fn1);
+
+    removeEvent(document, "click", fn);
+</script>
+</body>
+</html>

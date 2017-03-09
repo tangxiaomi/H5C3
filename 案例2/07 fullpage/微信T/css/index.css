@@ -1,0 +1,233 @@
+/*
+* @Author: Administrator
+* @Date:   2016-10-13 19:32:35
+* @Last Modified by:   Administrator
+* @Last Modified time: 2016-10-13 19:57:27
+*/
+/* 公共部分 */
+.transitionALL{
+	transition: all 1s;
+}
+.section{
+	overflow: hidden;
+}
+.w1200{
+	width:1200px;
+	margin: 0 auto;
+	height: 100%;
+	position: relative;
+}
+#menu .active a { color: #fff; background-color: #FEA005;}
+/*头部导航开始*/
+.header{
+	width:100%;
+	height:60px;
+	position: fixed;
+	left: 0;
+	top:0;
+	background: #fff url(../images/sprite.png) repeat-x;
+	z-index: 100;
+}
+.inHeader{
+	width:960px;
+	height:60px;
+	margin: 0 auto;
+	/*background:pink;*/
+}
+.inHeader h1{
+	width:155px;
+	height: 60px;
+	text-indent: -9999px;
+	background: url(../images/logo.jpg) ;
+	float: left;
+	margin-right: 17px;
+	cursor: pointer;
+}
+.headerNav{
+	float: left;
+	height:60px;
+}
+.headerNav li{
+	float: left;
+	height: 100%;
+	font-weight: bold;
+	font-size: 14px;
+
+}
+.headerNav li a{
+	padding:0 20px;
+	color: #888888;
+	line-height: 60px;
+	display:inline-block;
+}
+.headerNav li .current,.headerNav li .clicked{
+	background: #FEA005;
+	color: #fff;
+}
+
+/*头部导航结束*/
+/* 每屏背景 */
+.page1{
+	background:url(../images/b1_bg.jpg) center center;
+}
+.page2{
+	background:url(../images/b2_bg.jpg) center center;
+}
+.page3{
+	background:url(../images/b3_bg.jpg) center center;
+}
+.page4{
+	background: url(../images/b5_bg.jpg) center center;
+}
+.page5{
+	background: url(../images/b6_bg.jpg) center center;
+}
+.page6{
+	background: url(../images/b7_bg.jpg) center center;
+}
+/* 第一屏开始 */
+/* 第一屏开始 */
+.wind{
+	width:709px;
+	height: 625px;
+	position: absolute;
+	left:-40px;
+	top:0px;
+	opacity: 0;
+	z-index: 8;
+} 
+.textArea{
+	width:328px;
+	height: 211px;
+	position: absolute;
+	right: 0px;
+	top:50%;
+	margin-top: -110px;
+	opacity: 0;
+	z-index: 8;
+}
+.yinxiao{
+	width:328px;
+	height:162px;
+	background:url(../images/b1_03.png); 	
+}
+.btn{
+	width: 141px;
+	height: 39px;
+	margin-top:10px;
+	background:url(../images/b1_03_btn.png) 0 0 no-repeat;
+}
+.bg01{
+	 width: 1440px;
+	height: 441px;
+	position: absolute;
+	bottom: -250px;
+	left: 50%;
+	margin-left: -720px;
+	background:url(../images/b1_01.png) center center no-repeat;
+	z-index: 7;
+	/* opacity: 0; */
+}
+.comeout .wind{
+	left:30px;
+	top:100px;
+	opacity: 1;
+}
+.comeout .textArea{
+	right:120px;
+	opacity: 1;
+}
+.comeout .bg01{
+	bottom:-150px;
+	opacity: 1;
+}
+/* 第一屏结束 */
+
+/* 第二屏开始 */
+.small{
+	width:100%;
+	position: relative;
+	height: 100%;
+}
+.smallPic01{
+	position: absolute;
+	width:45px;
+	height: 60px;
+	background: url(../images/b2_03.png);
+	left:258px;
+	top:900px;
+	opacity: 0;
+	z-index: 8;	
+}
+.smallPic02{
+	position: absolute;
+	width:44px;
+	height: 53px;
+	background: url(../images/b2_04.png);
+	right:400px;
+	top:800px;
+	opacity: 0;
+	z-index: 8;
+}
+.smallPic03{
+	position: absolute;
+	width:283px;
+	height: 297px;
+	background: url(../images/b2_06.png);
+	right:0;
+	top:700px;
+	opacity: 0;
+	z-index: 8;
+}
+.comeout .smallPic01{
+	top:200px;
+	opacity: 1;
+}
+.comeout .smallPic02{
+	top:300px;
+	opacity: 1;
+}
+.comeout .smallPic03{
+	opacity: 1;
+	top:330px;
+}
+.info h3{
+	font-size: 30px;
+	color:#fff;
+	position: absolute;
+	left: 800px;
+	top:270px;
+	z-index: 9;
+	opacity: 0;
+}
+.txtARrea{
+	position: absolute;
+	color:#fff; 
+	font-size: 14px;
+	left: 500px; 
+	top:360px;
+	z-index: 9;
+	opacity: 0;
+}
+.comeout h3{
+	left: 590px;
+	opacity: 1;
+}
+.comeout .txtARrea{
+	left: 590px; 
+	opacity: 1;
+}
+.pic02{
+	position: absolute;
+	left:-700px;
+	top:500px;
+	opacity: 0;
+	z-index: 10;
+
+}
+.comeout .pic02{
+	left:-283px;
+	top:140px;
+	opacity: 1;
+}
+/* 第二屏结束 */

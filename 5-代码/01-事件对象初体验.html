@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 4000px;
+            width: 4000px;
+        }
+    </style>
+</head>
+<body>
+
+<script src="common.js"></script>
+<script>
+
+    //给文档注册了一个点击事件
+    //事件对象：无论你用或者不用，事件对象都会给你
+//    document.onclick = function (event) {
+//        //console.log("hehe");
+//        //console.log(aaa);
+//        //IE678事件触发的时候，把事件对象给了window对象
+//        //console.log(window.event);
+//        event = event || window.event;
+////        console.log(event.screenX + "   "+ event.screenY);
+////        console.log(event.clientX + "   "+ event.clientY);
+////        console.log(event.pageX + "   "+ event.pageY);
+//
+//        console.log(getPageX(event));
+//        console.log(getPageY(event));
+//
+//    }
+
+
+    document.onclick = function (event) {
+        event = event || window.event;
+        console.log(getPageX(event));
+        console.log(getPageY(event));
+    }
+
+    //封装一个函数，功能越简单越单一越好
+    function getPageX (event) {
+        if(event.pageX) {
+            return event.pageX;
+        }else {
+            return event.clientX + scroll().scrollLeft;
+        }
+    }
+
+    function getPageY(event) {
+        return event.pageY || event.clientY + scroll().scrollTop;
+    }
+
+</script>
+</body>
+</html>

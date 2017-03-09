@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+
+<script>
+
+    var box = document.getElementById("box");
+    animate(box, {"opacity":0});
+
+
+    function animate(obj, json,fn) {
+        if (obj.timer) {
+            clearInterval(obj.timer);
+        }
+        obj.timer = setInterval(function () {
+
+            var flag = true;
+            for(var k in json) {
+                if(k == "opacity"){
+                    //0-1   0-1000  :放大1000来进行动画
+                    var attr = k;
+                    var target = json[k] * 1000;
+
+                    var leader = getStyle(obj, attr);//获取到的值带了单位
+                    //leader放大1000
+                    leader= leader * 1000;
+                    leader = parseInt(leader) || 0;
+                    var step = (target - leader) / 10;
+                    //如果step是负数的话，不能向上取整，应该向下取整
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    //设置的时候一定要除以1000
+                    obj.style[attr] = leader/1000;
+
+                    if (leader != target) {
+                        flag = false;
+                    }
+                }else {
+                    //属性名： attr  k
+                    //属性值： target：  json[k]
+                    var leader = getStyle(obj, k);//获取到的值带了单位
+                    leader = parseInt(leader);
+                    var step = (json[k] - leader) / 10;
+                    //如果step是负数的话，不能向上取整，应该向下取整
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    obj.style[k] = leader + "px";
+                    console.log("代码还执行吗");
+
+                    if (leader != json[k]) {
+                        flag = false;
+                    }
+                }
+
+            }
+
+            if(flag) {
+                clearInterval(obj.timer);
+                if(fn) {
+                    fn();
+                }
+
+            }
+
+        }, 15);
+    }
+
+
+    function getStyle(obj, attr) {
+        if (window.getComputedStyle) {
+            return window.getComputedStyle(obj, null)[attr];
+        } else {
+            return obj.currentStyle[style];
+        }
+    }
+
+</script>
+</body>
+</html>

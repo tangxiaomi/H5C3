@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box_wrap:hover .box{
+			transform: rotateX(90deg) translateZ(20px);
+		}
+		.box{
+			width: 100px;
+			height: 40px;
+			position: relative;
+			transform-style: preserve-3d;
+			transition: all 1s;
+		}
+		.info1,.info2{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.info1{
+			background-color: red;
+			transform: rotateX(-90deg) translateZ(20px);
+		}
+		.info2{
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+<div class="box_wrap">
+	<div class="box">
+		<div class="info1"></div>
+		<div class="info2"></div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		ul{
+			width: 80%;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			display: flex;
+		}
+		li{
+			width: 100px;
+			height: 100px;
+			background-color: green;	
+			color: #fff;
+			/* 
+				flex-grow  控制项目的放大(比例) 默认值为0  即存在剩余空间 也不放大
+
+				值是number 
+				
+			*/
+			flex-grow: 1;
+		}
+		li:nth-child(2){
+			flex-grow: 2;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+</html>

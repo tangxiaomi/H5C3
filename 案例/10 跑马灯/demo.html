@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		ul{
+			width: 600px;
+			height: 600px;
+			margin: 100px auto;
+			position: relative;
+			perspective: 3000px;
+			transform-style: preserve-3d;
+			transform: rotateX(-20deg)rotateY(0deg);
+			animation: zhuan 10s linear infinite;
+		}
+		@keyframes zhuan{
+			0%{
+				transform: rotateX(-20deg) rotateY(0deg) ;
+			}
+			100%{
+				transform: rotateX(-20deg) rotateY(360deg) ;
+			}
+		}
+		li{
+			width: 200px;
+			height: 100px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			background-color: red;
+			background: 0 0 no-repeat;
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+		}
+		li:nth-child(1){
+			background-image: url(../images/0.png);
+		}
+		li:nth-child(2){
+			background-image:  url(../images/1.png);
+		}
+		li:nth-child(3){
+			background-image:  url(../images/2.png);
+		}
+		li:nth-child(4){
+			background-image:  url(../images/3.png);
+		}
+		li:nth-child(5){
+			background-image:  url(../images/4.png);
+		}
+		li:nth-child(6){
+			background-image:  url(../images/5.png);
+		}
+		li:nth-child(7){
+			background-image:  url(../images/6.png);
+		}
+		li:nth-child(8){
+			background-image:  url(../images/7.png);
+		}
+	</style>
+	<script type="text/javascript" src="../jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+
+		$('li').each(function(index, el) {
+
+			var jiaodu = 360/$('li').length;
+			
+			$(el).css('transform','translate(-50%,-50%) rotateY('+index*jiaodu+'deg) translateZ(240px)');
+
+		});
+
+	})
+	</script>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

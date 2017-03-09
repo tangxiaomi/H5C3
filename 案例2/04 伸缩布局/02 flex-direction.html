@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		ul{
+			width: 80%;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			display: flex;
+			/* flex-direction 控制的主轴方向 
+			   	row 默认值  主轴水平方向 箭头向右
+				row-reverse  主轴水平方向 箭头朝左
+				column 主轴呈现垂直方向 箭头朝下
+				column-reverse 主轴呈现垂直方向 箭头朝上
+			*/
+			flex-direction: column-reverse;
+		}
+		li{
+			width: 100px;
+			height: 100px;
+			background-color: green;	
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width:155px;
+			height: 220px;
+			background-color: red;
+			margin: 100px auto;
+			border: 1px solid #000;
+			perspective: 1px;
+			perspective-origin: 50% 50%;
+		}
+		img{
+			transform-origin: bottom;
+			transition: all 1s;
+		}
+		.box:hover img{
+			transform: rotateX(45deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="shu.jpg" height="220" width="155" alt="">
+	</div>
+</body>
+</html>

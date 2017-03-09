@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            width: 1300px;
+        }
+
+        div {
+            width: 1150px;
+            height: 400px;
+            border: 2px solid red;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        div li {
+            width: 240px;
+            height: 400px;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+
+<script src="animate.js"></script>
+<script>
+
+    //1. 找对象
+    var box = document.getElementById("box");
+    var ul = box.children[0];
+    var lis = ul.children;
+
+    //2. 给每一个li设置一个背景图片
+    for (var i = 0; i < lis.length; i++) {
+        var li = lis[i];
+        li.style.backgroundImage = "url(images/" + (i + 1) + ".jpg)";
+
+        //3. 给li注册onmouseover事件，让当前li宽度变成800     其他100
+        li.onmouseover = function () {
+            //3.1 先让所有的li变成100
+            for (var i = 0; i < lis.length; i++) {
+                animate(lis[i], {"width": 100});
+            }
+            //3.2 让当前li宽度变成800
+            animate(this, {"width": 800});
+        }
+
+        //4. 给li注册onmouseout事件,让所有的li变成240px
+        li.onmouseout = function () {
+            for (var i = 0; i < lis.length; i++) {
+                animate(lis[i], {"width": 240});
+            }
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

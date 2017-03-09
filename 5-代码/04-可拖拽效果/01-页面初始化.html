@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav {
+            height: 30px;
+            background: #036663;
+            border-bottom: 1px solid #369;
+            line-height: 30px;
+            padding-left: 30px;
+        }
+
+        .nav a {
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            text-decoration: none;
+
+        }
+
+        .d-box {
+            width: 400px;
+            height: 300px;
+            border: 5px solid #eee;
+            box-shadow: 2px 2px 2px 2px #666;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+        }
+
+        .hd {
+            width: 100%;
+            height: 25px;
+            background-color: #7c9299;
+            border-bottom: 1px solid #369;
+            line-height: 25px;
+            color: white;
+            cursor: move;
+        }
+
+        #box_close {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <a href="javascript:;" id="register">注册信息</a>
+</div>
+<div class="d-box" id="d_box">
+    <div class="hd" id="drop">注册信息 (可以拖拽)
+        <span id="box_close">【关闭】</span>
+    </div>
+    <div class="bd"></div>
+</div>
+
+<script src="../common.js"></script>
+<script>
+
+    //鼠标事件
+    //onmousedown:鼠标按下去的事件
+    //onmouseup:鼠标弹起来事件
+    //onclick :鼠标单击事件
+    //onmousedown
+    //onmouseup
+    //onclick
+    //ondblclick:鼠标双击事件
+
+
+    //onmouseover:鼠标经过事件
+    //onmouseout:鼠标离开事件
+    //onmousemove:鼠标移动事件
+
+    //思路：
+    //1. 找对象
+    var d_box = document.getElementById("d_box");
+    var drop = document.getElementById("drop");
+
+    //2. 给drop注册一个鼠标按下去的事件,在事件里面给文档注册一个鼠标移动的事件
+    drop.onmousedown = function (e) {
+
+        e = e || window.event;
+        //鼠标按下去的时候的位置
+        var pageX = getPageX(e);
+        var pageY = getPageY(e);
+
+        var spaceX = pageX - d_box.offsetLeft;
+        var spaceY = pageY - d_box.offsetTop;
+
+        document.onmousemove = function (event) {
+            event = event || window.event;
+            var pageX = getPageX(event);
+            var pageY = getPageY(event);
+            d_box.style.left = pageX - spaceX + "px";
+            d_box.style.top = pageY - spaceY + "px";
+
+            //清除选中的文字
+            window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+        }
+
+    }
+
+
+    //onmouseup事件不要给drop注册
+    //给document注册onmouseups事件
+    document.onmouseup = function () {
+        console.log("呵呵");
+        document.onmousemove = null;//解除一个事件
+    }
+
+</script>
+
+</body>
+</html>

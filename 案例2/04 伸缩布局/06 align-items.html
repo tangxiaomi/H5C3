@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		ul{
+			width: 80%;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			display: flex;
+			/* align-items 定义一行元素在侧轴上如何对齐
+			flex-start 起点对齐
+			flex-end  终点对齐
+			center  居中对齐
+			stretch 默认值 通栏对齐 但是如果项目有高的情况下 该属性没有作用
+			*/
+			align-items: baseline;
+		}
+		li{
+			width: 100px;
+			height: 100px;
+			background-color: green;	
+			color: #fff;
+		}
+		li:nth-child(2){
+			font-size: 40px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 150px;
+			height: 100px;
+			background:  url(bird.fw.png) 0 0 no-repeat;
+			position: absolute;
+			left: 0;
+			top: 0;
+			animation: shan .5s steps(7) infinite,quba 5s linear infinite;
+		}
+		@keyframes shan{
+			0%{
+				background-position: 0 0;
+			}
+			100%{
+				background-position: -1050px 0;
+			}
+		}
+		@keyframes quba{
+			0%{
+				left: -200px;
+				top: 200px;
+			}
+			100%{
+				left: 800px;
+				top: -200px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

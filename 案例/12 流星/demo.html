@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		html,body{
+			height: 100%;
+			background-color: #000;
+		}
+		.box{
+			height: 100%;
+			background:  url(section_home_fg.png) 0 0 no-repeat;
+			animation: liuxing 5s linear infinite;
+			background-position: -900px 1000px;
+		}
+		@keyframes liuxing{
+			0%{
+				background-position: -900px 1000px;
+				opacity: 0;
+			}
+			50%{
+				background-position: 0 0px;
+				opacity: 1;
+			}
+			100%{
+				background-position: 900px -1000px;
+				opacity: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

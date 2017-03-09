@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			padding: 0;
+			margin: 0;
+			list-style: none
+		}
+		.box{
+			width: 600px;
+			height: 200px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			position: relative;
+			overflow: hidden;
+		}
+		ul{
+			width: 1800px;
+			height: 200px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			animation: gogo 10s linear infinite;
+		}
+		.box:hover ul{
+			animation-play-state: paused;
+		}
+		@keyframes gogo{
+			0%{
+				left: 0;
+			}
+			100%{
+				left: -1200px;
+			}
+		}
+		img{
+			display: block;
+		}
+		li{
+			width: 300px;
+			height: 200px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li><img src="img/01.jpg" height="200" width="300" alt=""></li>
+			<li><img src="img/02.jpg" height="200" width="300" alt=""></li>
+			<li><img src="img/03.jpg" height="200" width="300" alt=""></li>
+			<li><img src="img/04.jpg" height="200" width="300" alt=""></li>
+			<li><img src="img/01.jpg" height="200" width="300" alt=""></li>
+			<li><img src="img/02.jpg" height="200" width="300" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

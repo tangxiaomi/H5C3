@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            height: 4000px;
+        }
+        p{
+            height: 2000px;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<p></p>
+<div id="box"></div>
+
+<script>
+    var box = document.getElementById("box");
+
+    //注册事件的时候，挖了一个坑（形参）
+    box.onclick = function (event) {
+        console.log(event);
+        //alert("呵呵");
+    }
+
+
+
+//    function fn () {
+//        console.log("fn.......");
+//    }
+//
+//    //fn();
+//    fn("123");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		.box{
+			padding: 10px;
+			height: 100px;
+			display: -webkit-box;
+			display: box;
+			display: flex;
+			display: -webkit-flex;
+		}
+		.left,.center,.right{
+			box-flex: 1;
+			flex: 1;
+			background-color: green;
+			margin-right: 1px;
+		}
+		.center,.right{
+			margin-top: -1px;
+		}
+		.right{
+			margin-right: 0;
+		}
+		.box a,.box a{
+			height: 50%;
+			display: block;
+			border-top: 1px solid #fff;
+		}
+		/* .center a:nth-child(1),
+		.right a:nth-child(1){
+			border-top: none;
+		} */
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="left"></div>
+		<div class="center">
+			<a href="javascript:;">酒店</a>
+			<a href="javascript:;">酒店</a>
+		</div>
+		<div class="right">
+			<a href="javascript:;">度假</a>
+			<a href="javascript:;">度假</a>
+		</div>
+	</div>
+	<div class="box">
+		<div class="left"></div>
+		<div class="center">
+			<a href="javascript:;">酒店</a>
+			<a href="javascript:;">酒店</a>
+		</div>
+		<div class="right">
+			<a href="javascript:;">度假</a>
+			<a href="javascript:;">度假</a>
+		</div>
+	</div>
+	<div class="box">
+		<div class="left"></div>
+		<div class="center">
+			<a href="javascript:;">酒店</a>
+			<a href="javascript:;">酒店</a>
+		</div>
+		<div class="right">
+			<a href="javascript:;">度假</a>
+			<a href="javascript:;">度假</a>
+		</div>
+	</div>
+	<div class="box">
+		<div class="left">
+			<a href="javascript:;">酒店</a>
+			<a href="javascript:;">酒店</a>
+		</div>
+		<div class="center">
+			<a href="javascript:;">酒店</a>
+			<a href="javascript:;">酒店</a>
+		</div>
+		<div class="right">
+			<a href="javascript:;">度假</a>
+			<a href="javascript:;">度假</a>
+		</div>
+	</div>
+</body>
+</html>
